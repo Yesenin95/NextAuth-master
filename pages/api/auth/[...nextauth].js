@@ -3,6 +3,7 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
 import VkProvider from "next-auth/providers/vk";
+import YandexProvider from "next-auth/providers/yandex"
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client";
 
@@ -44,6 +45,10 @@ export const authOptions = {
       VkProvider({
          clientId: process.env.VK_CLIENT_ID,
          clientSecret: process.env.VK_CLIENT_SECRET,
+      }),
+      YandexProvider({
+         clientId: process.env.Yandex_CLIENT_ID,
+         clientSecret: process.env.Yandex_CLIENT_SECRET,
       })
    ],
 };
